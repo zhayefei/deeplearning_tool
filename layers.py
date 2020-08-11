@@ -50,8 +50,6 @@ class TrilinearAttentionLayer(Layer):
         response_input = inputs[0]
         prompt_input = inputs[1]
 
-        # print 'Original prompt input shape: ', prompt_input.shape  # (?, ?, 100)
-        # repeated_prompt_input = RepeatVector(self.response_time_step)(prompt_input[:, -1, :])
         repeated_prompt_input = RepeatVector(self.time_step)(prompt_input)
         print('(Attn call) Repeated prompt input shape: ', repeated_prompt_input.shape)  # (?, 120, 100)
         print('(Attn call) Response input shape: ', response_input.shape)  # (?, ?, 100)
