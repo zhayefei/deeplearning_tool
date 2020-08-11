@@ -20,8 +20,6 @@ test_labels = test_labels[:100]
 train_images = train_images[:1000].reshape(-1, 28 * 28) / 255.0
 test_images = test_images[:100].reshape(-1, 28 * 28) / 255.0
 
-checkpoint_path = "training/cp.h5"
-
 custom_objects={
     'GatedLayer': GatedLayer,
 }
